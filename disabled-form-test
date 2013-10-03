@@ -1,0 +1,98 @@
+
+<!doctype html>
+
+<html dir="ltr" lang="en-US">
+<head>
+
+<meta charset="UTF-8" />
+
+<title>Disabled form field test</title>
+
+<style type="text/css">
+	
+body {
+	font: 110%/120% "Trebuchet MS", sans-serif;
+}
+div {
+	display: block;
+	background: #fff;
+	padding: 1.5em;
+}
+fieldset {
+	display: block;
+	width: 300px;
+}
+label {
+	display: block;
+}
+input {
+	font: 100%/120% "Trebuchet MS", sans-serif;
+}
+input[type="text"][readonly] {
+   color: #000;
+   font-weight: bold;
+}
+input[readonly] {
+	border: dashed 3px red;
+	cursor: not-allowed;
+	color: #000;
+	background: #fff;
+}
+div,
+.disabled-field {
+	display: block;
+	border: solid 1px #ddd;
+}
+
+.disabled-field {
+	cursor: not-allowed;
+	background: url(gfx/nope.png) 100% 10px no-repeat;
+}	
+
+input[aria-readony="true"] {
+	padding-right: 2.0em;
+}
+
+input[aria-readonly="true"]:hover,
+input[aria-readonly="true"]:focus
+{
+	background: url(gfx/nope.png) 100% 50% no-repeat;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<p>This form field gives a visual / textual cue that a field is disabled. Works great with JAWS and NVDA as well.</p>
+
+<fieldset>
+	<legend>Disabled form field test</legend>
+	
+	<form>
+	
+		<div>
+			<label for="txtf1">Field 1</label>
+			<input type="text" id="txtf1">
+		</div>
+
+		<div>
+			<label for="txtf2">Field 2</label>
+			<input type="text" id="txtf2">
+		</div>
+
+		<div class="disabled-field">
+			<label for="txtf3">Field 3</label>
+			<input type="text" id="txtf3" value="Field Disabled!" readonly="readonly" aria-readonly="true">
+		</div>
+
+		<div>
+			<label for="txtf4">Field 4</label>
+			<input type="text" id="txtf4">
+		</div>
+	</form>
+</fieldset>
+
+</body>
+</html>
